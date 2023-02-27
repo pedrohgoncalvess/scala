@@ -1,4 +1,4 @@
-package basics
+package Lectures.basics
 
 import java.text.SimpleDateFormat
 import java.util.Calendar
