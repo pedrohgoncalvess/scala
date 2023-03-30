@@ -2,21 +2,23 @@ package cognitive_class
 
 object classes extends App{
 
-  val pedro = new Hello("Testing classes")
-  println(pedro.printMessage)
+  val time = Time(10,30)
 
-  val name:String = "Pedro Henrique Gonçalves"
-  val splitNotSugar:Array[String] = name.split(" ")
-  val splitSugar:Array[String] = name split " "
+  println(Time.unapply(time)) //UNAPPLY METHOD !DESCOMPACT CLASS.
 
+  val pedroReverse = Reverse("Pedro")
 
+  println(pedroReverse) //APPLY METHOD REPRESENTATION
 
-  println(splitNotSugar.mkString(sep="," ))
-  println(splitSugar.mkString(sep=","))
+  val timeCopy = time.copy(minutes = 5)
+  println(timeCopy.toString)
+  println(s"$time is the primary and $timeCopy is the copy of the time.hour and set minutes")
+
 }
 
-class Hello(message:String) {
-
-  def printMessage:String = s"User message is: $message"
-
+case class Time(hour:Int,minutes:Int)
+object Reverse { //APPLY METHOD I THINK THE PRIMARY FUNCTION MUST HAVE NAME APPLY.
+  def apply(s:String): String = {
+    s.reverse
+  }
 }
